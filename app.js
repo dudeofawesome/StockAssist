@@ -77,7 +77,7 @@ app.get("/twitter", function(req ,res){
 			prediction += "You should sell this stock. Current tweets show that people pessimistic about this company and it's products. ";
 		} else {
 			prediction += "Just sit tight and hold on to your stock. "
-		} 
+		}
 
 		var highest = 0;
 		var lowest = 0;
@@ -95,6 +95,7 @@ app.get("/twitter", function(req ,res){
 		prediction += "\n\nStockAssist is making this prediction with a " + Math.round(percent * 100) / 100 + "% degree of confidence";
 
 		res.send({
+            query: req.query.q,
 			positive: positive,
 			negative: negative,
 			probabilities:(probs/(positive+negative)),

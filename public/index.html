@@ -4,6 +4,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" href="css/materialize.css">
@@ -29,7 +30,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
 </head>
-<body>
+<body style="overflow-y:auto;">
 	<div id="twoThirds">
 		<div class="container">
 			<div class="row" id="title">
@@ -65,8 +66,13 @@
 				<div class="col s8" id="right-bottom">
 					<h5 class="left-align">Prediction</h5>
 					<p class="left-align" id="prediction">
-						
+
 					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div id="chart-louis">
+
 				</div>
 			</div>
 		</div>
@@ -75,7 +81,7 @@
 
 
 </body>
-<!-- 
+<!--
 <script>
 //all the json data
 var jsonLines = [
@@ -203,24 +209,24 @@ jsonRect = [
 	});
 
 	//doing transitions for the charts
-	d3.selectAll("rect").transition()       
+	d3.selectAll("rect").transition()
 	.delay(400)
-	.duration(600)    
+	.duration(600)
 	.attr("height",function(d,i){return (i+1)*50;})
 	.attr("y", function(d,i){return d.y-((i+1)*50);});
 
 	d3.selectAll("line").transition()
 	.delay(400)
-	.duration(600)  
-	.attr("x2", function(d,i){ 
-		if(d.id == "needle"){ 
+	.duration(600)
+	.attr("x2", function(d,i){
+		if(d.id == "needle"){
 			return d.x2 + 150;
 		}else{
 			return d.x2;
 		}
-	})  
-	.attr("y1", function(d,i){ 
-		if(d.id == "graph"){ 
+	})
+	.attr("y1", function(d,i){
+		if(d.id == "graph"){
 			if(i%2){
 				return d.y1 - 50;
 			}else{
@@ -230,8 +236,8 @@ jsonRect = [
 			return d.y1;
 		}
 	})
-	.attr("y2", function(d,i){ 
-		if(d.id == "graph"){ 
+	.attr("y2", function(d,i){
+		if(d.id == "graph"){
 			if(i%2){
 				return d.y2 - 80;
 			}else{
@@ -259,6 +265,3 @@ jsonRect = [
 
 </script>
 -->
-
-
-
