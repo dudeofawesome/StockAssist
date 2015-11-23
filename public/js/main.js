@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
 	function sendData(){
 
 		$.ajax({
-			url: "http://stockassist.azurewebsites.net/twitter?q="+$("#input-23").val(),
+			url: "/twitter?q="+$("#input-23").val(),
 			type: 'GET'
 		})
 		.done(function(data) {
@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 				value: data.negative,
 				color: "#808080",
 				highlight: "#b3b3b3",
-				label: "negative"	
+				label: "negative"
 			}
 			]
 
@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
 			// console.log(data);
 
 			$("#prediction").text(data.prediction);
-			
+
 
 			myPieChart.update();
 
@@ -85,9 +85,3 @@ jQuery(document).ready(function($) {
 
 
 });
-
-
-
-
-
-
